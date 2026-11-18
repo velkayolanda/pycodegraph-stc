@@ -67,8 +67,8 @@ pip install -e ".[dev,all]"
 pycodegraph analyze --src ./my_project --out ./output
 
 # 2. Generate LLM summaries (requires API key)
-export ANTHROPIC_API_KEY="your_api_key_here"
-pycodegraph annotate --input ./output --provider anthropic --model claude-3-5-sonnet-20241022
+export LLM_API_KEY="your_api_key_here"
+pycodegraph annotate --input ./output --provider anthropic --model [LLM MODEL]
 
 # 3. Render diagrams
 pycodegraph render --input ./output --diagram all
@@ -79,7 +79,7 @@ pycodegraph render --input ./output --diagram sequence --entry my_project.main.r
 
 ## Configuration
 
-Copy `.envň` to `.env` and configure your LLM provider:
+Copy `.env` to `.env` and configure your LLM provider:
 
 ```bash
 cp .env .env
